@@ -69,7 +69,7 @@ func main() {
 
 ### Function: ID() (string, error)
 
-Returns original hardware id as a `string`.
+Returns original hardware address as a `string` like `MM:MM:MM:SS:SS:SS`.
 
 ### Function: ProtectedID(appID string) (string, error)
 
