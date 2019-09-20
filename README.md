@@ -1,5 +1,4 @@
-# hardwareid provides support for reading the unique hardware id of most host OS's (without admin privileges)
-
+# hardwareid provides support for reading the unique hardware address of most host OS's 
 ![Image of Gopher 47](logo.png)
 
 … because sometimes you just need to reliably identify your hardwares.
