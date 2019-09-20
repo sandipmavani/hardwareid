@@ -76,15 +76,8 @@ Returns hashed version of the hardware ID as a `string`. The hash is generated i
 
 ## What you get
 
-This package returns the OS native hardware UUID/GUID, which the OS uses for internal needs.
+This package returns the hardware address mac address of your system.
 
-## Security Considerations
-
-A hardware ID uniquely identifies the host. Therefore it should be considered "confidential", and must not be exposed in untrusted environments. If you need a stable unique identifier for your app, do not use the hardware ID directly.
-
-> A reliable solution is to hash the hardware ID in a cryptographically secure way, using a fixed, application-specific key.
-
-That way the ID will be properly unique, and derived in a constant way from the hardware ID but there will be no way to retrieve the original hardware ID from the application-specific one.
 
 Do something along these lines:
 
