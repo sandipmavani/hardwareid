@@ -144,14 +144,15 @@ func biosSerialNumberOnWindows() (string, error) {
 	}
 	l := strings.Split(string(serialNo), "\n")
 	if len(l) >= 2 {
-		return l[1], nil
+		newline := strings.Split(l[1], " ")
+		return newline[0], nil
 	} else {
 		return "", errors.New("return split length less 2")
 	}
 }
 
-//获取CPU PorcessorID
-func GetCPUPorcessorID() (string, error) {
+//获取CPU ProcessorID
+func GetCPUProcessorID() (string, error) {
 	switch runtime.GOOS {
 	case "windows":
 		return cpuPorcessorIDOnWindows()
@@ -164,7 +165,7 @@ func GetCPUPorcessorID() (string, error) {
 	}
 }
 
-func cpuPorcessorIDOnWindows() (string, error) {
+func cpuProcessorIDOnWindows() (string, error) {
 	cmd := exec.Command("CMD", "/C", "WMIC CPU GET ProcessorID")
 	serialNo, err := cmd.Output()
 	if err != nil {
@@ -172,7 +173,8 @@ func cpuPorcessorIDOnWindows() (string, error) {
 	}
 	l := strings.Split(string(serialNo), "\n")
 	if len(l) >= 2 {
-		return l[1], nil
+		newline := strings.Split(l[1], " ")
+		return newline[0], nil
 	} else {
 		return "", errors.New("return split length less 2")
 	}
